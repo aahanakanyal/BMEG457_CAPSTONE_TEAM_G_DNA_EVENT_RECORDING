@@ -4,6 +4,7 @@ Repository for simulations used to generate graphs for TEAM G - DNA EVENT RECORD
 
 Video simulation for cell division conditions as outlined in the final report: Please run the file *SIM_GRIDCELLDIV_WITHPROB_FINAL.m* to view MATLAB Movie
 
-Fluorescence Plots by running the file *FluorescencePlots.m*
+The initial iterations of the model can be found in the files: *FluorescencePlots.m* , *idealcondsim.m* and *litbasedsim.m*
+    
 
 -----The code in this reporsitory is still rather preliminary and needs to be updated based on additionally experimental data-----
