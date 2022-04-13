@@ -5,13 +5,13 @@ close all %close any figures
 
 
 %% 
-n=7;
-%add other parametrers to inform transfection efficicency
+n=7; % number of cells
+% can add other paramters to inform transfection efficiency
 
 
-transfec=0.7;
-percentstaysblue=0.3;
-percentstaysgreen=0.3;
+transfec=0.7; %transfection efficiency
+percentstaysblue=0.3; %percentage of cells that remain blue
+percentstaysgreen=0.3; %percentage of cells that remain green
 
 yb = rand(n,1);
 xb= rand(n,1);
@@ -39,12 +39,11 @@ hold on
 xlim([0,1]);
 ylim([0,1]);
 grid on
+
 for i=0:10
     plot(xbt,ybt,'bo', 'markersize', 10, 'linewidth', 2, 'MarkerEdgeColor',[0, 0, i*0.1])
     hold on
     pause(0.5)
-   
-    
 end
 
 
@@ -57,14 +56,15 @@ keepxb=ismember(xbt,chooseblue);
 posxfory=find(keepxb==1);
 choosebluey=ybt(posxfory);
 keepyb=ismember(ybt,choosebluey);
-keepbluex=find(keepxb==0) ;%variable name is opposite of what it is doing - storing things that are going to chnage colour
-keepbluey=find(keepyb==0) ;%variable name is opposite of what it is doing- storing things that are going to chnage colour
+keepbluex=find(keepxb==0) ;%variable name is opposite of what it is doing - storing things that are going to change colour
+keepbluey=find(keepyb==0) ;%variable name is opposite of what it is doing- storing things that are going to change colour
 plotblongx=xbt(find(keepxb==1));
 plotblongy=ybt(find(keepyb==1));
 
 xbt=xbt(keepbluex);
 ybt=ybt(keepbluey);
 
+%blue
 
 
 hold on
@@ -115,9 +115,10 @@ ygaddex=ygadd(posyb+1+length(plotblyg):end);
 xgaddex=xgadd(posxb+1+length(plotblxg):end);
 
 
-yg=[ybt',ygaddex']; %only successfully tranfected that decay after ecxpression move on to having green
+yg=[ybt',ygaddex']; %only successfully transfected that decay after expression move on to having green
 xg=[xbt',xgaddex'];
 
+%green
 
 hold on
 for i=0:10
@@ -136,8 +137,8 @@ keepxg=ismember(xg,choosegreen);
 posxforyg=find(keepxg==1);
 choosegreeny=yg(posxforyg);
 keepyg=ismember(yg,choosegreeny);
-keepgreenx=find(keepxg==0) ;%variable name is opposite of what it is doing - storing things that are going to chnage colour
-keepgreeny=find(keepyg==0) ;%variable name is opposite of what it is doing- storing things that are going to chnage colour
+keepgreenx=find(keepxg==0) ;%variable name is opposite of what it is doing - storing things that are going to change colour
+keepgreeny=find(keepyg==0) ;%variable name is opposite of what it is doing- storing things that are going to change colour
 plotglongx=xg(find(keepxg==1));
 plotglongy=yg(find(keepyg==1));
 oglengthxg=length(xg);
@@ -201,6 +202,7 @@ yr=[yg,yraddex'];
 xr=[xg,xraddex'];
 %long blue decay
 
+%red
 
 for i=0:10
    plot(xr,yr,'ro', 'markersize', 10, 'linewidth', 2,'MarkerEdgeColor',[i*0.1 0 0])
